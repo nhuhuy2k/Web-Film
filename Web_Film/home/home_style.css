@@ -20,10 +20,12 @@ a{
     position: fixed;
     top: 0;
     width: 100%;
-    height: 128px;
     line-height: 128px;
-    padding: 0 32px;
     z-index: 10;
+    padding: 0 30px;
+}
+#header .logo_web{
+    float: left;
 }
 .logo_web{
     display: flex;
@@ -46,9 +48,10 @@ a{
     float: right;
     display: flex;
     list-style: none;
+    
 }
 .nav li{
-    padding-left: 25px;
+    padding: 0 8px;
     font-size: 25px;
     font-weight: 700;
 }
@@ -61,11 +64,10 @@ a{
     top: 0;
     z-index: 3;
     background-image: url("../asset/img/spider_man.jpg");
-    height: 110vh;
+    height: 100vh;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    margin-bottom: 40px;
 }
 #slider::before{
     content: "";
@@ -73,7 +75,6 @@ a{
     top: 0;
     width: 100%;
     background-color: rgba(0, 0, 0, 0.6);
-    background: linear-gradient();
     height: 100%;
 }
 
@@ -82,8 +83,8 @@ a{
     display: flex;
     align-items: center;
     width: 100%;
-    
-    padding: 128px 0;
+    height: 100%;
+    padding: 128px 0 60px 0;
 }
 .slider_content::after{
     content: "";
@@ -91,7 +92,6 @@ a{
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 100px;
     background-image: linear-gradient(to top, #0f0f0f, rgba(0, 0, 0, 0));
 }
 
@@ -293,3 +293,90 @@ a{
     cursor: pointer;
 }
 
+/* reponsive Tablet */
+@media only screen and (min-width : 532px ) and (max-width : 1023px ){
+    .slider_poster{
+        display: none;
+    }
+
+    .slider_content_infor{
+        width: 100%;
+    }
+    .slider_content_infor h2{
+        font-size: 45.2px;
+    }
+
+    .slider_content_infor p{
+        font-size: 12.5px;
+        margin-top: 20px;
+    }
+    #slider{
+        height: 65vh;
+    }
+}
+
+.nav_mobile{
+    display: none;
+}
+/* Reponsive mobile */
+@media only screen and (max-width: 531px){
+    .slider_poster{
+        display: none;
+    }
+    .slider_content_infor{
+        width: 100%;
+    }
+    .slider_content_infor h2{
+        font-size: 30px;
+    }
+
+    .slider_content_infor p{
+        font-size: 16px;
+        margin-top: 20px;
+    }
+    #slider{
+        height: 65vh;
+    }
+    .nav{
+        display: none;
+    }
+    
+    #header .logo_web{
+        float: none;
+        font-size: 25px;
+    }
+    .slider_content::after{
+        content: "";
+        position: absolute;
+        bottom: -30px;
+        width: 100%;
+        height: 100px;
+        background-image: linear-gradient(to top, #0f0f0f, rgba(0, 0, 0, 0));
+    }
+    .nav_mobile{
+        display: flex ;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        background: #0f0f0f;
+        padding: 15px 10px;
+        align-items: flex-start;
+        justify-content: flex-start;
+        justify-content: space-between;
+    }
+    #header{
+        line-height: 80px;
+        height: 80px;
+    }
+    
+    .img_logo{
+        width: 50px;
+    }
+    .slider_content{
+        padding-top: 30px;
+    }
+    .btns{
+        width: 100%;
+        display: flex;
+    }
+}
