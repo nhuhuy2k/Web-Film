@@ -12,37 +12,48 @@ body {
     background-color: #0f0f0f;
 }
 
-.padding_right {
-    padding-right: 12px;
-}
-
+/* compoment */
 a {
     text-decoration: none;
     color: #fff;
 }
 
-ul{
+ul {
     list-style-type: none;
 }
 
+
+
+/* Main code */
+
 #header {
+    display: flex;
     height: 128px;
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 10;
     padding: 0 30px;
-    line-height: 128px;
     align-items: center;
     justify-content: space-between;
+    transition: 0.5s;
 }
 
+.shink {
+    background-color: #0f0f0f;
+    height: 80px !important;
+    transition: 0.5s;
+}
 
 .logo {
     display: flex;
     align-items: center;
     justify-content: center;
     float: left;
+}
+
+.logo:hover {
+    color: #E50913;
 }
 
 .logo_text {
@@ -61,6 +72,7 @@ ul{
     display: flex;
     align-items: center;
     justify-content: space-between;
+    min-width: 300px;
 }
 
 .nav_item {
@@ -69,19 +81,148 @@ ul{
     position: relative;
 }
 
-.nav_item a::after {
+.nav_item a:hover {
+    color: #E50913;
+}
+
+.nav_item::after {
     content: "";
     position: absolute;
     bottom: 0;
     background-color: #E50913;
     height: 3px;
     width: 100%;
+    right: 50%;
+    transform: translateX(50%);
 }
 
-#slider{
-    background-image: url(../asset/img/spider_man.jpg);
+#slider { 
+}
+
+.slide_item{
+    background-image: url("../asset/img/spider_man.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-    background-size: 100%;
-    height: 100vh;
+    background-position: center;
+    position: relative;
 }
+.slide_item::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+.slide_container {
+    padding: 128px 0;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+.slide_container::after{
+    content: "";
+    position: absolute;
+    bottom: 0;
+     left: 0;
+     right: 0;
+     width: 100%;
+     background-image: linear-gradient(to top, #0f0f0f, rgba(0, 0, 0, 0));
+     height: 100px;
+}
+
+.content {
+    width: 55%;
+    padding-right: 50px;
+    padding-top: 100px;
+}
+
+.name_film {
+    font-size: 80px;
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+.introduce {
+    font-size: 16px;
+    font-weight: 700;
+    margin-top: 20px;
+}
+
+.btns {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    width: 400px;
+}
+
+.btn {
+    padding: 10px 20px;
+    border-radius: 24px;
+    border: none;
+    font-size: 24px;
+    font-weight: 600;
+    color: #fff;
+    cursor: pointer;
+}
+
+.btn_watch_now {
+    background-color: #E50913;
+}
+
+.btn_watch_now:hover {
+    box-shadow: 0 0 9px 10px #ff00004d;
+}
+.btn_watch_trailer{
+    background: none;
+    border: 3px solid #fff;
+}
+.btn_watch_trailer:hover{
+    color: #E50913;
+    background-color: #fff;
+}
+.poster {
+    width: 40%;
+}
+
+.poster_img{
+    width: 400px;
+    border-radius: 30px ;
+}
+
+/* Mobile*/
+@media only screen and (max-width: 37.5em) {
+    #header {
+        justify-content: center;
+        height: 90px;
+    }
+
+    .shink {
+        height: 48px !important;
+    }
+
+    .logo_img {
+        width: 50px;
+    }
+
+    .logo_text {
+        font-size: 28.5px;
+        font-size: 19px;
+    }
+
+    .nav_menu {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: #0f0f0f;
+        height: 44px;
+        padding: 5px 20px;
+    }
+
+}
+
+
+/* Tablets*/
+@media only screen and(min-width: 37.5625em) and (max-width: 64em) {}
