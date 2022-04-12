@@ -13,6 +13,7 @@
 // function closeModalTrailer(){
 //     mordalTrailer.classList.remove("open_modal_trailer")
 // }
+
 // header listenEvent
 window.onscroll = function(){
     let header = document.getElementById("header")
@@ -23,3 +24,18 @@ window.onscroll = function(){
         header.classList.remove("shink")
     }
 }
+
+// Show Slider
+var slideIndex = 0;
+showSlider();
+function showSlider() {
+    var i;
+    var slides = document.getElementsByClassName("slide_item");
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) {slideIndex = 1}
+    slides[slideIndex-1].style.display = "block";
+    setTimeout(showSlider, 10000);
+  }

@@ -96,17 +96,57 @@ ul {
     transform: translateX(50%);
 }
 
-#slider { 
+/* slide */
+#slider {
+    width: 100%;
+    height: 840px;
+    overflow: hidden;
+    position: relative;
+    top: 0;
+    left: 0;
+    right: 0;
 }
 
-.slide_item{
-    background-image: url("../asset/img/spider_man.jpg");
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 0.8s;
+}
+
+@-webkit-keyframes fade {
+    from {
+        opacity: .1;
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+@keyframes fade {
+    from {
+        opacity: .1;
+        transform: translateX(100%);
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1
+    }
+}
+
+.slide_item {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     position: relative;
+    transition: 0.6;
+    height: 100%;
+    display: none;
 }
-.slide_item::before{
+
+.slide_item::before {
     content: "";
     position: absolute;
     top: 0;
@@ -115,21 +155,25 @@ ul {
     bottom: 0;
     background-color: rgba(0, 0, 0, 0.5);
 }
+
 .slide_container {
     padding: 128px 0;
     display: flex;
     justify-content: center;
-    position: relative;
+    position: absolute;
+    height: 100%;
+    width: 100%;
 }
-.slide_container::after{
+
+.slide_container::after {
     content: "";
     position: absolute;
     bottom: 0;
-     left: 0;
-     right: 0;
-     width: 100%;
-     background-image: linear-gradient(to top, #0f0f0f, rgba(0, 0, 0, 0));
-     height: 100px;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background-image: linear-gradient(to top, #0f0f0f, rgba(0, 0, 0, 0));
+    height: 100px;
 }
 
 .content {
@@ -153,8 +197,6 @@ ul {
 .btns {
     margin-top: 20px;
     display: flex;
-    justify-content: space-between;
-    width: 400px;
 }
 
 .btn {
@@ -169,26 +211,97 @@ ul {
 
 .btn_watch_now {
     background-color: #E50913;
+    margin-right: 20px;
 }
 
 .btn_watch_now:hover {
     box-shadow: 0 0 9px 10px #ff00004d;
 }
-.btn_watch_trailer{
+
+.btn_watch_trailer {
     background: none;
     border: 3px solid #fff;
 }
-.btn_watch_trailer:hover{
+
+.btn_watch_trailer:hover {
     color: #E50913;
     background-color: #fff;
 }
+
 .poster {
     width: 40%;
 }
 
-.poster_img{
+.poster_img {
     width: 400px;
-    border-radius: 30px ;
+    border-radius: 30px;
+}
+
+/* .prev{
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 20%;
+    cursor: pointer;
+    transform: translateY(50%);
+}
+.prev:hover{
+    background-color: aqua;
+}
+
+.next{
+    position: absolute;
+    right: 0;
+    top: 40%;
+} */
+/* Modal*/
+/* Tablets*/
+@media only screen and (min-width: 37.5625em) and (max-width: 64em) {
+    .poster {
+        display: none;
+    }
+
+    .content {
+        width: 90%;
+        padding: 0;
+    }
+
+    .slide_item {
+        height: 450px;
+    }
+
+    .name_film {
+        font-size: 51px;
+    }
+
+    .introduce {
+        font-size: 12.8px;
+    }
+
+    .btns {
+        align-items: center;
+        width: 340px;
+        margin: 20px auto 0;
+    }
+    .slide_container::after{
+        content: "";
+        height: 60px;
+    }
+
+    .btn {
+        font-size: 18px;
+    }
+
+    .btn_watch_now {
+        padding: 12px 26px;
+    }
+
+    .btn_watch_trailer {
+        border: 2px solid #fff;
+    }
+
+
 }
 
 /* Mobile*/
@@ -199,7 +312,7 @@ ul {
     }
 
     .shink {
-        height: 48px !important;
+        height: 48px;
     }
 
     .logo_img {
@@ -218,11 +331,54 @@ ul {
         right: 0;
         background-color: #0f0f0f;
         height: 44px;
-        padding: 5px 20px;
+        padding: 8px 20px;
     }
 
+    .nav_item{
+        font-size: 18px;
+    }
+    .poster {
+        display: none;
+    }
+
+    .content {
+        width: 90%;
+        padding: 0;
+    }
+
+    .slide_item {
+        height: 420px;
+    }
+
+    .name_film {
+        font-size: 38.4px;
+    }
+
+    .introduce {
+        font-size: 9.6px;
+    }
+
+    .btns {
+        align-items: center;
+        margin: 20px auto 0;
+        width: 300px;
+    }
+
+    .btn {
+        font-size: 14.4px;
+    }
+
+    .btn_watch_now {
+        padding: 8px 17px;
+    }
+
+    .btn_watch_trailer {
+        border: 2px solid #fff;
+        padding: 5.5px 17px;
+    }
+
+    .slide_container::after{
+        content: "";
+        height: 30px;
+    }
 }
-
-
-/* Tablets*/
-@media only screen and(min-width: 37.5625em) and (max-width: 64em) {}
