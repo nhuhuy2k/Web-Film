@@ -34,7 +34,9 @@
                         </p>
                         <div class="btns">
                             <button class="btn btn_watch_now"> Watch now</button>
-                            <button class="btn btn_watch_trailer" onclick="openModalTrailer()"> Watch trailer</button>
+                            <button class="btn btn_watch_trailer"
+                                onclick="openModalTrailer(`https://www.youtube.com/embed/OB3g37GTALc`)"> Watch
+                                trailer</button>
                         </div>
                     </div>
                     <div class="poster">
@@ -50,7 +52,9 @@
                             with a twist – when she gets too excited, she transforms into a giant red panda.</p>
                         <div class="btns">
                             <button class="btn btn_watch_now"> Watch now</button>
-                            <button class="btn btn_watch_trailer"  onclick="openModalTrailer()"> Watch trailer</button>
+                            <button class="btn btn_watch_trailer"
+                                onclick="openModalTrailer(`https://www.youtube.com/embed/XdKzUbAiswE`)"> Watch
+                                trailer</button>
                         </div>
                     </div>
                     <div class="poster">
@@ -66,7 +70,9 @@
                             hurtling on a collision course with life as we know it.</p>
                         <div class="btns">
                             <button class="btn btn_watch_now"> Watch now</button>
-                            <button class="btn btn_watch_trailer" onclick="openModalTrailer()"> Watch trailer</button>
+                            <button class="btn btn_watch_trailer"
+                                onclick="openModalTrailer(`https://www.youtube.com/embed/ivIwdQBlS10`)"> Watch
+                                trailer</button>
                         </div>
                     </div>
                     <div class="poster">
@@ -74,18 +80,16 @@
                     </div>
                 </div>
             </div>
-            <!-- <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-            <a class="next" onclick="plusSlides(1)">&#10095;</a> -->
         </div>
         <div class="container" style="height: 300px;">
 
         </div>
     </div>
-    <div id="modal" >
+    <div id="modal">
         <div class="modal_container">
             <div class="modal_content">
                 <button class="close_modal" onclick="closeModalTrailer()">X</button>
-                <iframe class="modal_iframe" src="https://www.youtube.com/embed/OB3g37GTALc"
+                <iframe class="modal_iframe" id="iframe_trailer" 
                     title="YouTube video player" frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowfullscreen></iframe>

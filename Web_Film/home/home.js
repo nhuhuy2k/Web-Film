@@ -1,23 +1,17 @@
 // // let header= document.getElementsByClassName('js_header')
 
 // Modal 
-let mordalTrailer = document.getElementById('modal');
-
-function openModalTrailer() {
-    mordalTrailer.classList.add("open_modal")
+let modalTrailer = document.getElementById('modal');
+let iframeTrailer = document.getElementById("iframe_trailer");
+function openModalTrailer(url){
+    iframeTrailer.setAttribute("src", url);
+    modalTrailer.style.display = "block";
 }
-
-function closeModalTrailer() {
-    mordalTrailer.classList.remove("open_modal")
+function closeModalTrailer(){
+    modalTrailer.style.display = "none";
+    iframeTrailer.setAttribute("src", "");
 }
-
-let modalContainer = document.getElementsByClassName("modal_container");
-    
-
-// modalContainer.addEventListener('click', function (event) {
-//     event.stopPropagation()
-// })
-
+  
 // header listenEvent
 window.onscroll = function () {
     let header = document.getElementById("header")

@@ -250,9 +250,7 @@ ul {
     z-index: 11;
     display: none;
 }
-.open_modal{
-    display: block !important;
-}
+
 .modal_container{
     display: flex;
     justify-content: center;
