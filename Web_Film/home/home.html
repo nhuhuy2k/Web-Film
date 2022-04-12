@@ -5,6 +5,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PhimHay.com</title>
+
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
     <link rel="stylesheet" href="home_style.css">
 </head>
 
@@ -32,7 +34,7 @@
                         </p>
                         <div class="btns">
                             <button class="btn btn_watch_now"> Watch now</button>
-                            <button class="btn btn_watch_trailer"> Watch trailer</button>
+                            <button class="btn btn_watch_trailer" onclick="openModalTrailer()"> Watch trailer</button>
                         </div>
                     </div>
                     <div class="poster">
@@ -48,7 +50,7 @@
                             with a twist – when she gets too excited, she transforms into a giant red panda.</p>
                         <div class="btns">
                             <button class="btn btn_watch_now"> Watch now</button>
-                            <button class="btn btn_watch_trailer"> Watch trailer</button>
+                            <button class="btn btn_watch_trailer"  onclick="openModalTrailer()"> Watch trailer</button>
                         </div>
                     </div>
                     <div class="poster">
@@ -64,7 +66,7 @@
                             hurtling on a collision course with life as we know it.</p>
                         <div class="btns">
                             <button class="btn btn_watch_now"> Watch now</button>
-                            <button class="btn btn_watch_trailer"> Watch trailer</button>
+                            <button class="btn btn_watch_trailer" onclick="openModalTrailer()"> Watch trailer</button>
                         </div>
                     </div>
                     <div class="poster">
@@ -77,6 +79,17 @@
         </div>
         <div class="container" style="height: 300px;">
 
+        </div>
+    </div>
+    <div id="modal" >
+        <div class="modal_container">
+            <div class="modal_content">
+                <button class="close_modal" onclick="closeModalTrailer()">X</button>
+                <iframe class="modal_iframe" src="https://www.youtube.com/embed/OB3g37GTALc"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+            </div>
         </div>
     </div>
     <script src="home.js"></script>
