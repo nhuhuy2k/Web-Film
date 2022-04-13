@@ -35,5 +35,5 @@ function showSlider() {
     slideIndex++;
     if (slideIndex > slides.length) { slideIndex = 1 }
     slides[slideIndex - 1].style.display = "block";
-    setTimeout(showSlider, 10000);
+    setTimeout(showSlider, 5000);
 }
