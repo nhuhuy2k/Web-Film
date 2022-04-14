@@ -20,6 +20,10 @@
     align-items: center;
     justify-content: space-between;
     transition: 0.5s;
+    font-family: "Montserrat", sans-serif;
+    color: #fff;
+    font-weight: 400;
+    
 }
 
 .shink {

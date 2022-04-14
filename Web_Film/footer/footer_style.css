@@ -89,6 +89,8 @@
     }
     .footer_content{
         padding: 0 10px;
+        width: 100%;
+        justify-content: space-between;
     }
    .footer_content ul{
        line-height: 2;
@@ -97,6 +99,7 @@
    .footer_content li{
        font-size: 12px;
        font-weight: 600;
+       margin: 0 8px;
    }
 }
 
