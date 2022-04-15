@@ -577,7 +577,7 @@ ul {
         display: none;
     }
 
-    .content {
+    #header .content {
         width: 90%;
         padding: 0;
     }

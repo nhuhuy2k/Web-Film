@@ -1,0 +1,151 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #0f0f0f;
+    font-family: "Montserrat", sans-serif;
+    color: #fff;
+    font-weight: 400;
+}
+
+
+.container{
+
+}
+
+.banner{
+    height: 50vh;
+    position: relative;
+    background-image: url(../asset/img/banner_sonic2.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.banner::before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6)
+}
+
+.banner::after{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background-image: linear-gradient(to top, #0f0f0f, rgba(0, 0, 0, 0));
+}
+
+.movie_content{
+    display: flex;
+    max-width: 1260px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    margin-top: -200px;
+}
+
+.movie_content_poster{
+    background-image: url("../asset/img/poster_sonic2.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 30%;
+    border-radius: 30px;
+    min-height: 600px;
+}
+.movie_content_info{
+    width: 70%;
+    padding-left: 30px;
+}
+.movie_content_info .title{
+    font-size: 60px;
+}
+
+.categories{
+    margin-top: 20px;
+    /* display: flex; */
+
+}
+.categories .category{
+    padding: 8px 16px;
+    border: 2px solid #fff;
+    background-color: #0f0f0f;
+    border-radius: 30px;
+}
+.categories > * ~ *{
+    margin-left: 12px;
+}
+.movie_content_info .introduce{
+    margin-top: 35px;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.movie_content_info .title_casts{
+    font-size: 24px;
+    margin-top: 45px;
+}
+.movie_content_info .casts{
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+.casts .item{
+    margin-top: 10px;
+    
+}
+.casts .item_img{
+    width: 130px;
+    border-radius: 10px;
+}
+
+.casts > * {
+    margin-right: 20px;
+}
+
+.watch_movie{
+    margin-top: 60px;
+}
+
+.watch_movie iframe{
+    width: 90%;
+    height: 100vh;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+   
+}
+
+.title_similar{
+    margin-top: 60px;
+    margin-bottom: 30px;
+    margin-left: 40px;
+    font-size: 24px;
+}
+.list_similar_film{
+    display: flex;
+    margin: 0 30px 50px;
+}
+
+.similar_film{
+    max-width: 200px;
+    margin-right: 12px;
+}
+
+.similar_img{
+    width: 100%;
+    border-radius: 30px;
+}
+
+.similar_name{
+    font-size: 18.72px;
+    margin-top: 5px;
+}
