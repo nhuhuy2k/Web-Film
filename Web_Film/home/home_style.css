@@ -386,7 +386,6 @@ ul {
         width: 340px;
         margin: 20px auto 0;
     }
-
     .slide_container::after {
         content: "";
         height: 60px;
@@ -467,17 +466,15 @@ ul {
         width: 90%;
         padding: 0;
     }
-
+    #slider{
+        height: 420px !important;
+    }
     .slide_item {
         height: 420px;
     }
 
     .name_film {
         font-size: 38.4px;
-    }
-
-    #slider {
-        height: 420px;
     }
 
     .introduce {
@@ -502,7 +499,9 @@ ul {
         border: 2px solid #fff;
         padding: 5.5px 17px;
     }
-
+    .slide_container{
+        padding: 48px 0;
+    }
     .slide_container::after {
         content: "";
         height: 30px;

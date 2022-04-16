@@ -162,7 +162,13 @@ body {
     font-size: 18.72px;
     margin-top: 5px;
 }
+/* Tablet */
+@media only screen and (min-width: 37.5625em) and (max-width: 64em) {
+    .watch_movie iframe{
+        height: 70vh;
+    }
 
+}
 /*Mobile*/
 @media only screen and (max-width: 37.5em) {
     .movie_content_poster {
