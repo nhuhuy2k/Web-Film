@@ -18,7 +18,6 @@ body{
 
 #page__header{
     height: 280px;
-    background-color: aqua;
     background-image: url(../asset/img/footer_img.jpg);
     background-position: center;
     background-size: cover;

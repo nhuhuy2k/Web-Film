@@ -23,88 +23,6 @@ ul {
 }
 
 
-
-/* Main code */
-
-#header {
-    display: flex;
-    height: 128px;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 10;
-    padding: 0 30px;
-    align-items: center;
-    justify-content: space-between;
-    transition: 0.5s;
-}
-
-.shink {
-    background-color: #0f0f0f;
-    height: 80px !important;
-    transition: 0.5s;
-}
-
-.logo {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    float: left;
-}
-
-.logo:hover {
-    color: #E50913;
-}
-
-.logo_text {
-    font-size: 30px;
-    display: block;
-    padding-left: 8px;
-    font-style: italic;
-    font-weight: 600;
-}
-
-.logo_img {
-    width: 80px;
-}
-
-.nav_menu {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    min-width: 300px;
-}
-
-.nav_item {
-    font-size: 24px;
-    font-weight: 600;
-    position: relative;
-}
-
-.nav_item a:hover {
-    color: #E50913;
-}
-
-.nav_item::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    background-color: #E50913;
-    height: 3px;
-    width: 0;
-    right: 50%;
-    transform: translateX(50%);
-    transition: width 0.5s ease;
-}
-
-.nav_item:hover::after {
-    width: 100%;
-}
-
-.nav_item:active::after {
-    width: 100%;
-}
-
 /* slide */
 #slider {
     width: 100%;
@@ -541,38 +459,6 @@ ul {
 
 /* Mobile*/
 @media only screen and (max-width: 37.5em) {
-    #header {
-        justify-content: center;
-        height: 90px;
-    }
-
-    .shink {
-        height: 48px !important;
-    }
-
-    .logo_img {
-        width: 50px;
-    }
-
-    .logo_text {
-        font-size: 28.5px;
-        font-size: 19px;
-    }
-
-    .nav_menu {
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        background-color: #0f0f0f;
-        height: 44px;
-        padding: 8px 20px;
-    }
-
-    .nav_item {
-        font-size: 18px;
-    }
-
     .poster {
         display: none;
     }

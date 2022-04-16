@@ -6,21 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PhimHay.com</title>
 
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
     <link rel="stylesheet" href="home_style.css">
+    <link rel="stylesheet" href="../header/header_style.css">
+    <link rel="stylesheet" href="../footer/footer_style.css">
+    <script>
+        $(function () {
+            $("#header__page").load("../header/header.html");
+        });
+    </script>
 </head>
 
 <body>
     <div id="main">
-        <div id="header">
-            <a href="#" class="logo"><img class="logo_img" src="../asset/img/logo.1e58b23f.png" alt="">
-                <p class="logo_text">MOVIE</p>
-            </a>
-            <ul class="nav_menu">
-                <li class="nav_item "><a href="">Home</a></li>
-                <li class="nav_item "><a href="../movie_page/movie_page.html">Movies</a></li>
-                <li class="nav_item"><a href="">TV series</a></li>
-            </ul>
+        <div id="header__page">
+            
         </div>
         <div id="slider">
             <div class="slide_item fade" style="background-image: url(../asset/img/spider_man.jpg);">
@@ -148,32 +148,8 @@
             </div>
         </div>
     </div>
-    <div id="footer">
-        <div class="footer_container">
-            <div class="footer_heading">
-                <img src="../asset/img/logo.1e58b23f.png" alt="">
-                <h2>MOVIE</h2>
-            </div>
-            <div class="footer_content">
-                <ul>
-                    <li><a href="">Home</a></li>
-                    <li><a href="">Contact us</a></li>
-                    <li><a href="">Tern of services</a></li>
-                    <li><a href="">About us</a></li>
-                </ul>
-                <ul>
-                    <li><a href="">Live</a></li>
-                    <li><a href="">FAQ</a></li>
-                    <li><a href="">Preminum</a></li>
-                    <li><a href="">Pravacy policy</a></li>
-                </ul>
-                <ul>
-                    <li><a href="">You must watch</a></li>
-                    <li><a href="">Recent release</a></li>
-                    <li><a href="">Top IMDB</a></li>
-                </ul>
-            </div>
-        </div>
+    <div id="footer__page">
+        
     </div>
 
     <div id="modal">
@@ -188,6 +164,7 @@
     </div>
 
     <script src="home.js"></script>
+    <script src="../header/header.js"></script>
 
 </body>
 
