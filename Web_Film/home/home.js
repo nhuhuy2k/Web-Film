@@ -12,17 +12,6 @@ function closeModalTrailer(){
     iframeTrailer.setAttribute("src", "");
 }
   
-// header listenEvent
-window.onscroll = function () {
-    let header = document.getElementById("header")
-    console.info(document.documentElement.scrollTop);
-    if (document.documentElement.scrollTop > 0 || document.body.scrollTop > 0) {
-        header.classList.add("shink")
-    } else {
-        header.classList.remove("shink")
-    }
-}
-
 // Show Slider
 var slideIndex = 0;
 showSlider();
