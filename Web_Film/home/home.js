@@ -3,15 +3,15 @@
 // Modal 
 let modalTrailer = document.getElementById('modal');
 let iframeTrailer = document.getElementById("iframe_trailer");
-function openModalTrailer(url){
+function openModalTrailer(url) {
     iframeTrailer.setAttribute("src", url);
     modalTrailer.style.display = "block";
 }
-function closeModalTrailer(){
+function closeModalTrailer() {
     modalTrailer.style.display = "none";
     iframeTrailer.setAttribute("src", "");
 }
-  
+
 // Show Slider
 var slideIndex = 0;
 showSlider();
@@ -26,3 +26,5 @@ function showSlider() {
     slides[slideIndex - 1].style.display = "block";
     setTimeout(showSlider, 5000);
 }
+
+////////////////////////////////////////////////////////////////////
