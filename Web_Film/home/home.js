@@ -42,7 +42,7 @@ function getSlider() {
                             <p class="introduce">${item.overview}</p>
                             <div class="btns">
                                 <button class="btn btn_watch_now"> Watch now</button>
-                                <button class="btn btn_watch_trailer" id="btn_trailer"> Watch
+                                <button class="btn btn_watch_trailer" id="btn_trailer" value='https://www.youtube.com/embed/761uRaAoW00'> Watch
                                     trailer</button >
                             </div >
                         </div >
@@ -59,15 +59,23 @@ function getSlider() {
 
         });
         slider.innerHTML = stringSlider;
-
-        const oppenTrailerModal = document.getElementById("btn_trailer");
-        oppenTrailerModal.addEventListener("click", function () {
-            modalTrailer.style.display = "block";
+        $(document).ready(function() {
+            $(".btn_watch_trailer").click(function() {
+                modalTrailer.style.display = "block";
+                $("#iframe_trailer").attr("src", this.value)
+            })
+            $("#close_modal_trailler").click(function() {
+                modalTrailer.style.display = "none";
+            })
         })
-        const closeTrailerModal = document.getElementById("close_modal_trailler");
-        closeTrailerModal.addEventListener("click", function () {
-            modalTrailer.style.display = "none";
-        })
+        // const oppenTrailerModal = document.getElementById("btn_trailer");
+        // oppenTrailerModal.addEventListener("click", function () {
+        //     modalTrailer.style.display = "block";
+        // })
+        // const closeTrailerModal = document.getElementById("close_modal_trailler");
+        // closeTrailerModal.addEventListener("click", function () {
+        //     modalTrailer.style.display = "none";
+        // })
 
         var slideIndex = 0;
         showSlider();
