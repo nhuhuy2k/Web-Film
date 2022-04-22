@@ -33,7 +33,7 @@ function getSlider() {
         //get video trailer youtobe
         //https://api.themoviedb.org/3/{{category}}/{{movie_id}}/videos?api_key={{api_key}}
         results.slice(0, 4).forEach((item) => {
-            stringSlider += `<div class="slide_item fade"  style="background-image: url(${urlBackground}${item.backdrop_path
+            stringSlider += `<div class="slide_item fade" id="slide__item" style="background-image: url(${urlBackground}${item.backdrop_path
                 })">
                     <div class="slide_container">
                         <div class="content">
@@ -77,8 +77,17 @@ function getSlider() {
         const nextSlide = document.getElementById('next_js');
         nextSlide.addEventListener('click', plusSlides(1))
 
-        let slidess = document.getElementsByClassName("slide_item");
-        console.log(slidess[0])
+
+        function showSlider() {
+            var slides = document.getElementsByClassName("slide_item");
+            for (var i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) { slideIndex = 1 }
+            slides[slideIndex - 1].style.display = "block";
+            setTimeout(showSlider, 8000);
+        }
 
         function plusSlides(n) {
             showSlides2(slideIndex += n);
@@ -95,17 +104,6 @@ function getSlider() {
                 slides[i].style.display = "none";
             }
             slides[slideIndex - 1].style.display = "block";
-        }
-
-        function showSlider() {
-            var slides = document.getElementsByClassName("slide_item");
-            for (var i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";
-            }
-            slideIndex++;
-            if (slideIndex > slides.length) { slideIndex = 1 }
-            slides[slideIndex - 1].style.display = "block";
-            setTimeout(showSlider, 20000);
         }
 
     });
@@ -131,7 +129,7 @@ function getTrendingMovie() {
 function getTopRateMovie() {
     getData(urlApiTopRateMovie, {}).then((data) => {
         const topRateMovies = document.getElementById("top_rate_movies");
-        let results = data.results.slice(0, 12);
+        let results = data.results.slice(1, 13);
         let stringTopRateMovies = "";
         results.forEach((item) => {
             stringTopRateMovies += `
@@ -211,6 +209,6 @@ function slideRerounel() {
         }
     })
 }
-
+        
 
 ////////////////////////////////////////////////////////////////////

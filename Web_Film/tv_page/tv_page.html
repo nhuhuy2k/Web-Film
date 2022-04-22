@@ -5,7 +5,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TV series | Phim Hay</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" href="../header/header_style.css">
     <link rel="stylesheet" href="../footer/footer_style.css">
     <link rel="stylesheet" href="tv_page_style.css">
@@ -32,49 +33,17 @@
                 <button class="btn__search">Search</button>
 
             </div>
-            <div class="movie__list">
-                <div class="movie__item">
-                    <img src="../asset/img/nonic2.jpg" alt="" class="img__film">
-                    <h2 class="name__film">Sonic 2</h2>
-                </div>
-                <div class="movie__item">
-                    <img src="../asset/img/nonic2.jpg" alt="" class="img__film">
-                    <h2 class="name__film">Sonic 2</h2>
-                </div>
-                <div class="movie__item">
-                    <img src="../asset/img/nonic2.jpg" alt="" class="img__film">
-                    <h2 class="name__film">Sonic 2</h2>
-                </div>
-                <div class="movie__item">
-                    <img src="../asset/img/nonic2.jpg" alt="" class="img__film">
-                    <h2 class="name__film">Sonic 2</h2>
-                </div>
-                <div class="movie__item">
-                    <img src="../asset/img/nonic2.jpg" alt="" class="img__film">
-                    <h2 class="name__film">Sonic 2</h2>
-                </div>
-                <div class="movie__item">
-                    <img src="../asset/img/nonic2.jpg" alt="" class="img__film">
-                    <h2 class="name__film">Sonic 2</h2>
-                </div>
-                <div class="movie__item">
-                    <img src="../asset/img/nonic2.jpg" alt="" class="img__film">
-                    <h2 class="name__film">Sonic 2</h2>
-                </div>
+            <div class="movie__list" id="movie__list">
                 <div class="movie__item">
                     <img src="../asset/img/nonic2.jpg" alt="" class="img__film">
                     <h2 class="name__film">Sonic 2</h2>
                 </div>
             </div>
         </div>
-        <div id="movie_footer">
+        <div id="footer__page">
         </div>
-        <script>
-            $(function () {
-                $("#movie_footer").load("../footer/footer.html");
-            });
-        </script>
         <script src="../header/header.js"></script>
+        <script type="module" src="./tv_page_js.js"></script>
 </body>
 
 </html>

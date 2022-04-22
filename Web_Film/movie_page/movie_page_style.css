@@ -87,13 +87,18 @@ body{
 .movie__item{
     margin-top: 40px;
 }
+.movie__item a{
+    text-decoration: none;
+    color: #fff;
+}
 .img__film{
     width: 100%;
     border-radius: 15px;
 }
 
 .name__film{
-    margin-left: 10px;
+    margin-top: 10px;
+    font-size: 20px;
 }
 /*Tablet*/
 @media only screen and (min-width: 37.5625em) and (max-width: 64em){
