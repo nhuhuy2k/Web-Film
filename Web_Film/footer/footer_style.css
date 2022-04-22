@@ -43,7 +43,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 70%;
+    width: 100%;
+    padding: 0 100px;
 }
 
 .footer_content ul{
@@ -88,7 +89,7 @@
         font-size: 20px;
     }
     .footer_content{
-        padding: 0 10px;
+        padding: 0;
         width: 100%;
         justify-content: space-between;
     }

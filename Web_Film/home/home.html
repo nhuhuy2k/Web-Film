@@ -2,235 +2,74 @@
 <html>
 
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>PhimHay.com</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PhimHay.com</title>
 
-  <link rel="stylesheet" href="home_style.css" />
-  <link rel="stylesheet" href="../header/header_style.css" />
-  <link rel="stylesheet" href="../footer/footer_style.css" />
-  <link rel="stylesheet" href="../library/css/owl.carousel.min.css">
-  <link rel="stylesheet" href="../library/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="home_style.css" />
+    <link rel="stylesheet" href="../header/header_style.css" />
+    <link rel="stylesheet" href="../footer/footer_style.css" />
+    <link rel="stylesheet" href="../library/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="../library/css/owl.theme.default.min.css">
 </head>
 
 <body>
-  <div id="main">
-    <div id="header__page"></div>
-    <div id="slider"></div>
-    <div class="container" style="margin-bottom: 100px">
-      <div class="section">
-        <div class="section_heading">
-          <h2>Trending Movies</h2>
-          <a href=""><button class="btn">View more</button></a>
+    <div id="main">
+        <div id="header__page"></div>
+        <div id="slider" class=""></div>
+        
+        <div class="container" style="margin-bottom: 100px">
+            <div class="section">
+                <div class="section_heading">
+                    <h2>Trending Movies</h2>
+                    <a href=""><button class="btn">View more</button></a>
+                </div>
+                <div class="movies_list owl-carousel" id="trending_movie"></div>
+            </div>
+            <div class="section">
+                <div class="section_heading">
+                    <h2>Top Rate Movies</h2>
+                    <a href=""><button class="btn">View more</button></a>
+                </div>
+                <div class="movies_list owl-carousel" id="top_rate_movies">
+                </div>
+            </div>
+            <div class="section">
+                <div class="section_heading">
+                    <h2>Trending Tv</h2>
+                    <a href=""><button class="btn">View more</button></a>
+                </div>
+                <div class="movies_list owl-carousel" id="trending_tv">
+                </div>
+            </div>
+            <div class="section">
+                <div class="section_heading">
+                    <h2>Top Rate Tv</h2>
+                    <a href=""><button class="btn">View more</button></a>
+                </div>
+                <div class="movies_list owl-carousel" id="top_rate_tv">
+                </div>
+            </div>
         </div>
-        <div class="movies_list owl-carousel owl-theme" id="trending_movie" style="overflow: hidden"></div>
-      </div>
-      <div class="section">
-        <div class="section_heading">
-          <h2>Top Rate Movies</h2>
-          <a href=""><button class="btn">View more</button></a>
-        </div>
-        <div class="movies_list" id="top_rate_movies">
-          <div class="movie">
-            <img src="../asset/img/nonic2.jpg" alt="" />
-            <h3>Sonic the Hedgehog 2</h3>
-          </div>
-          <div class="movie">
-            <img src="../asset/img/nonic2.jpg" alt="" />
-            <h3>Sonic the Hedgehog 2</h3>
-          </div>
-        </div>
-      </div>
-      <div class="section">
-        <div class="section_heading">
-          <h2>Trending Tv</h2>
-          <a href=""><button class="btn">View more</button></a>
-        </div>
-        <div class="movies_list" id="trending_tv">
-          <div class="movie">
-            <img src="../asset/img/nonic2.jpg" alt="" />
-            <h3>Sonic the Hedgehog 2</h3>
-          </div>
-          <div class="movie">
-            <img src="../asset/img/nonic2.jpg" alt="" />
-            <h3>Sonic the Hedgehog 2</h3>
-          </div>
-        </div>
-      </div>
-      <div class="section">
-        <div class="section_heading">
-          <h2>Top Rate Tv</h2>
-          <a href=""><button class="btn">View more</button></a>
-        </div>
-        <div class="movies_list" id="top_rate_tv">
-          <div class="movie">
-            <img src="../asset/img/nonic2.jpg" alt="" />
-            <h3>Sonic the Hedgehog 2</h3>
-          </div>
-          <div class="movie">
-            <img src="../asset/img/nonic2.jpg" alt="" />
-            <h3>Sonic the Hedgehog 2</h3>
-          </div>
-        </div>
-      </div>
     </div>
-  </div>
 
-  <div id="footer__page"></div>
+    <div id="footer__page"></div>
 
-  <div id="modal">
-    <div class="modal_container">
-      <div class="modal_content">
-        <button class="close_modal" onclick="closeModalTrailer()">X</button>
-        <iframe class="modal_iframe" id="iframe_trailer" title="YouTube video player" frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen></iframe>
-      </div>
+    <div id="modal">
+        <div class="modal_container">
+            <div class="modal_content">
+                <button class="close_modal" id="close_modal_trailler">X</button>
+                <iframe class="modal_iframe" id="iframe_trailer" title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+            </div>
+        </div>
     </div>
-  </div>
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="home.js"></script>
-  <script src="../header/header.js"></script>
-  <script src="../services/ApiManage.js"></script>
-  <script src="../library/js/owl.carousel.min.js"></script>
-  <!-- import from home.js -->
-  <script>
-    $(document).ready(function () {
-      $(function () {
-        $("#header__page").load("../header/header.html");
-      });
-      $(function () {
-        $("#footer__page").load("../footer/footer.html");
-      });
-    });
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="module" src="home.js"></script>
+    <script src="../library/js/owl.carousel.min.js"></script>
+    <script src="../header/header.js"></script>
 
-    const urlBackground = "https://image.tmdb.org/t/p/original/";
-    const srcPoster = "https://image.tmdb.org/t/p/w500/";
-    getData(urlApi, {}).then((data) => {
-      const slider = document.getElementById("slider");
-      const trendingMovie = document.getElementById("trending_movie");
-      let stringSlider = "";
-
-      // JSON data parsed by `data.json()` call
-      let results = data.results;
-      //get video trailer youtobe
-      //https://api.themoviedb.org/3/{{category}}/{{movie_id}}/videos?api_key={{api_key}}
-      results.slice(0, 4).forEach((item) => {
-        stringSlider += `<div class="slide_item fade owl-lazy" style="background-image: url(${urlBackground}${item.backdrop_path
-          })">
-                <div class="slide_container">
-                    <div class="content">
-                        <h2 class="name_film ">${item.original_title || item.title
-          }</h2>
-                        <p class="introduce">${item.overview}</p>
-                        <div class="btns">
-                            <button class="btn btn_watch_now"> Watch now</button>
-                            <button class="btn btn_watch_trailer"
-                                onclick="openModalTrailer()"> Watch
-                                trailer</button >
-                        </div >
-                    </div >
-                    <div class="poster">
-                        <img src="${srcPoster}${item.poster_path
-          }" class="poster_img">
-                    </div>
-                </div >
-            </div >`;
-      });
-      slider.innerHTML = stringSlider;
-      var slideIndex = 0;
-      showSlider();
-      function showSlider() {
-          var slides = document.getElementsByClassName("slide_item");
-          for (var i = 0; i < slides.length; i++) {
-              slides[i].style.display = "none";
-          }
-          slideIndex++;
-          if (slideIndex > slides.length) { slideIndex = 1 }
-          console.log("slides: ", slides);
-          console.log("slideIndex - 1: ", slideIndex - 1);
-          console.log("slides[slideIndex - 1]: ", slides[1]);
-          slides[slideIndex - 1].style.display = "block";
-          setTimeout(showSlider, 5000);
-      }
-
-      let stringTrendMovie = "";
-      results.slice(0, 10).forEach((item) => {
-        stringTrendMovie += `
-                    <div class="movie">
-                        <a href="../detail_page/detail_page.html"><img src="${srcPoster}${item.poster_path
-          }" alt=""></a>
-                        <h3>${item.original_title || item.title}</h3>
-                    </div>
-                    `;
-      });
-      trendingMovie.innerHTML = stringTrendMovie;
-      $('.owl-carousel').owlCarousel({
-          loop: true,
-          margin: 10,
-          nav: false,
-          responsive: {
-              0: {
-                  items: 1
-              },
-              600: {
-                  items: 3
-              },
-              1000: {
-                  items: 8
-              }
-          }
-      })
-    });
-    //use function getTopRateMovie(){getData()}
-    getData(urlApiTopRateMovie, {}).then((data) => {
-      const topRateMovies = document.getElementById("top_rate_movies");
-      let results = data.results.slice(0, 12);
-      let stringTopRateMovies = "";
-      results.forEach((item) => {
-        stringTopRateMovies += `
-                        <div class="movie">
-                            <a href="../detail_page/detail_page.html"><img src="${srcPoster}${item.poster_path
-          }" alt=""></a>
-                            <h3>${item.original_title || item.title}</h3>
-                        </div>
-                        `;
-      });
-
-      topRateMovies.innerHTML = stringTopRateMovies;
-    });
-
-    getData(urlApiTrendingTv, {}).then((data) => {
-      const topRateMovies = document.getElementById("trending_tv");
-      let results = data.results.slice(0, 12);
-      let stringTrendingMovie = "";
-      results.forEach((item) => {
-        stringTrendingMovie += `
-                        <div class="movie">
-                            <a href="../detail_page/detail_page.html"><img src="${srcPoster}${item.poster_path
-          }" alt=""></a>
-                            <h3>${item.original_name || item.name}</h3>
-                        </div>
-                        `;
-      });
-      topRateMovies.innerHTML = stringTrendingMovie;
-    });
-    getData(urlApiTopRateTv, {}).then((data) => {
-      const topRateMovies = document.getElementById("top_rate_tv");
-      let results = data.results.slice(0, 12);
-      let stringTopRateTv = "";
-      results.forEach((item) => {
-        stringTopRateTv += `
-                        <div class="movie">
-                            <a href="../detail_page/detail_page.html"><img src="${srcPoster}${item.poster_path
-          }" alt=""></a>
-                            <h3>${item.original_name || item.name}</h3>
-                        </div>
-                        `;
-      });
-      topRateMovies.innerHTML = stringTopRateTv;
-    });
-  </script>
 </body>
 
 </html>

@@ -64,8 +64,8 @@
 .nav_item {
     font-size: 22px;
     font-weight: 600;
-    margin-left: 20px;
     position: relative;
+    margin-right: 20px;
 }
 
 .nav_item a:hover {
@@ -119,11 +119,13 @@
         right: 0;
         background-color: #0f0f0f;
         height: 44px;
-        padding: 8px 20px;
+        padding: 8px 0;
+        justify-content: space-around;
         margin: 0;
     }
 
     .nav_item {
         font-size: 18px;
+        margin: 0;
     }
 }
