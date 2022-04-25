@@ -7,7 +7,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Film | The Movie</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="../library/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="../library/css/owl.theme.default.min.css">
     <link rel="stylesheet" href="../footer/footer_style.css">
     <link rel="stylesheet" href="../header/header_style.css">
     <link rel="stylesheet" href="detail_page_style.css">
@@ -18,9 +20,12 @@
     <div id="main">
         <div id="header__page"></div>
         <div id="container">
-            <div class="banner">
+            <div id="banner">
+                <div class="banner">
+                </div>
             </div>
-            <div class="movie_content">
+            
+            <div class="movie_content" id="movie_content">
                 <div class="movie_content_poster">
                     <div class="movie_content_poster_img"
                         style="background-image: url(../asset/img/poster_sonic2.jpg);"></div>
@@ -73,32 +78,13 @@
                     allowfullscreen></iframe>
             </div>
             <h3 class="title_similar">Similar</h3>
-            <div class="list_similar_film">
-                <div class="similar_film">
-                    <img class="similar_img" src="../asset/img/spider_man_3.jpg" alt="">
-                    <a href=""></a>
-                    <h3 class="similar_name">Spider-Man 3</h3>
-                </div>
-                <div class="similar_film">
-                    <img class="similar_img" src="../asset/img/spider_man_3.jpg" alt="">
-                    <a href=""></a>
-                    <h3 class="similar_name">Spider-Man 3</h3>
-                </div>
-                <div class="similar_film">
-                    <img class="similar_img" src="../asset/img/spider_man_3.jpg" alt="">
-                    <a href=""></a>
-                    <h3 class="similar_name">Spider-Man 3</h3>
-                </div>
-                <div class="similar_film">
-                    <img class="similar_img" src="../asset/img/spider_man_3.jpg" alt="">
-                    <a href=""></a>
-                    <h3 class="similar_name">Spider-Man 3</h3>
-                </div>
-                
+            <div class="list_similar_film owl-carousel" id="list_similar">
+        
             </div>
         </div>
         <div id="footer__page"></div>
     </div>
+    <script src="../library/js/owl.carousel.min.js"></script>
     <script src="../header/header.js"></script>
     <script type="module" src="./detail_page_js.js"></script>
 </body>

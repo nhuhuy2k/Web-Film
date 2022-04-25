@@ -14,16 +14,18 @@ body {
 
 .container {}
 
-.banner {
+#banner{
     height: 50vh;
+    top: 0;
+    width: 100%;
     position: relative;
-    background-image: url(../asset/img/banner_sonic2.jpg);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
+}
+.img_baner {
+    width: 100%;
+    height: 100%;
 }
 
-.banner::before {
+#banner::before {
     content: "";
     position: absolute;
     width: 100%;
@@ -31,7 +33,7 @@ body {
     background-color: rgba(0, 0, 0, 0.6)
 }
 
-.banner::after {
+#banner::after {
     content: "";
     position: absolute;
     bottom: 0;
@@ -141,7 +143,10 @@ body {
     margin-left: 40px;
     font-size: 24px;
 }
-
+.list_similar_film a{
+    text-decoration: none;
+    color: #fff;
+}
 .list_similar_film {
     display: flex;
     justify-content: flex-start;

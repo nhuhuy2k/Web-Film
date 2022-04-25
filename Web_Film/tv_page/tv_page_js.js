@@ -1,17 +1,15 @@
-import getData, { urlApiTrendingTv } from "../services/ApiManage.js"
-const srcPoster = "https://image.tmdb.org/t/p/w500/";
+import { getTrendingTv, srcPoster } from "../services/ApiManage.js"
 
 
 
-getDataTV();
+renderTv();
 
-function getDataTV() {
-    let stringHTML = "";
-    getData(urlApiTrendingTv, {}).then((data) => {
+async function renderTv() {
+    const res = await getTrendingTv();
         const movieList = document.getElementById("movie__list");
-        let results = data.results
+        let stringHTML = "";
 
-        results.forEach((item) => {
+        res.results.forEach((item) => {
             stringHTML += `
             <div class="movie__item">
                    <a href="../detail_page/detail_page.html"> <img src="${srcPoster}${item.poster_path}" alt="" class="img__film">
@@ -20,7 +18,7 @@ function getDataTV() {
                 </div>`;
         });
         movieList.innerHTML = stringHTML;
-    })
+   
 }
 
 $(document).ready(function () {
