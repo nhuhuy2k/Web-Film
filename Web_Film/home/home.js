@@ -66,13 +66,13 @@ async function renderSlider() {
     }
 
     function plusSlides(n) {
+        console.log(1)
         showSlides2(slideIndex += n);
     }
 
     function showSlides2(n) {
         var i;
         var slides = document.getElementsByClassName("slide_item");
-        console.log(1)
         if (n > slides.length) {
             slideIndex = 1
         }
@@ -94,9 +94,14 @@ async function renderSlider() {
             modalTrailer.style.display = "none"
         })
 
-        $('.prev').click(plusSlides(-1))
-        $('.next').click(plusSlides(1))
-
+        // $('.prev').click(plusSlides(-1))
+        // $('.next').click(plusSlides(1))
+        $('.prev').click(function() {
+            plusSlides(-1)
+        })
+        $('.next').click(function() {
+            plusSlides(1)
+        })
     });
 
 }
