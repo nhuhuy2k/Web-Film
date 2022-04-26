@@ -33,6 +33,7 @@ ul {
     left: 0;
     right: 0;
     margin-bottom: 50px;
+    
 }
 
 .fade {
@@ -79,6 +80,7 @@ ul {
     transition: 0.6;
     height: 100%;
     display: none;
+    
 }
 
 .slide_item::before {
@@ -489,7 +491,7 @@ ul {
     }
 
     .movie h3 {
-        font-size: 10px;
+        font-size: 14px;
         margin: 12px 0 0 10px;
     }
 

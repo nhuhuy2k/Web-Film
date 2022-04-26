@@ -54,7 +54,7 @@ async function renderCategoriesMovie() {
     const res = await getCategoriesMovie();
     const category = document.getElementById("categories_movie");
     let result = res.genres;
-    // console.log("")
+    
     let stringHTML =""
     result.forEach((item) =>{
          stringHTML += `<span class="category">${item.name}</span>`
@@ -65,7 +65,6 @@ async function renderCategoriesMovie() {
 async function renderCasts() {
     const res = await getCasts();
     const casts = document.getElementById("casts_list");
-    console.log(res.cast)
     let result = res.cast
     let stringHTML =""
     result.slice(0, 5).forEach((item) =>{

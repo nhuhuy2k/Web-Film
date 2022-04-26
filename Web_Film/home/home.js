@@ -4,12 +4,17 @@ import { getMovieTrailer, getTrendingMovie, getTopRateMovie, getTrendingTv, getT
 let modalTrailer = document.getElementById('modal');
 let iframeTrailer = document.getElementById("iframe_trailer");
 
-
+// renderHeader()
 renderTrendingMovie()
 renderTopRateMovie()
 renderTrendingTv()
 renderTopRateTv()
 renderSlider()
+// function renderHeader(){
+//     const header = document.getElementById("header__page")
+//     const stringHeader = ``
+
+// }
 
 $(document).ready(function () {
     $(function () {
@@ -24,9 +29,9 @@ async function renderSlider() {
     const res = await getTrendingMovie();
     const slider = document.getElementById("slider");
     let stringSlider = "";
-
+    var x = 0;
     res.results.slice(0, 4).forEach((item) => {
-        stringSlider += `<div class="slide_item fade" style="background-image: url(${urlBackground}${item.backdrop_path})">
+        stringSlider += `<div class="slide_item fade" id="${x++}"style="background-image: url(${urlBackground}${item.backdrop_path})">
              <div class="slide_container">
                 <div class="content">
                     <h2 class="name_film fade_in">${item.original_title || item.title}</h2>
@@ -40,8 +45,7 @@ async function renderSlider() {
                     <img src="${srcPoster}${item.poster_path}" class="poster_img fade_in">
                 </div>
             </div >
-            <a class="prev " id="prev_js">&#10094;</a>
-            <a class="next " id="next_js">&#10095;</a>
+           
         </div >
          `;
     });
@@ -49,7 +53,7 @@ async function renderSlider() {
 
     var slideIndex = 0;
     showSlider();
-   
+
     function showSlider() {
         var slides = document.getElementsByClassName("slide_item");
         for (var i = 0; i < slides.length; i++) {
@@ -58,7 +62,7 @@ async function renderSlider() {
         slideIndex++;
         if (slideIndex > slides.length) { slideIndex = 1 }
         slides[slideIndex - 1].style.display = "block";
-        setTimeout(showSlider, 5000);
+        // setTimeout(showSlider, 10000);
     }
 
     function plusSlides(n) {
@@ -68,13 +72,19 @@ async function renderSlider() {
     function showSlides2(n) {
         var i;
         var slides = document.getElementsByClassName("slide_item");
-        for (i = 0; i < slides.length; i++) {
-            slides[i].style.display = "none";
+        
+        if (n > slides.length) {
+            slideIndex = 1
         }
-        if (n > slides.length) { slideIndex = 1 }
-        if(n < slides.length) { slideIndex = slides.length }
+        if (n < slides.length) {
+            slideIndex = slides.length
+        }
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none"
+        }
         slides[slideIndex - 1].style.display = "block";
     }
+
     $(document).ready(function () {
         $(".btn_watch_trailer").click(function () {
             modalTrailer.style.display = "block";
@@ -84,8 +94,13 @@ async function renderSlider() {
             modalTrailer.style.display = "none"
         })
 
-    })
+        var prevN = -1;
+        var nextN = 1;
+        var slideIndex = 0
+        $('.prev').click(plusSlides(prevN))
+        $('.next').click(plusSlides(nextN))
 
+    });
 
 }
 
@@ -151,6 +166,9 @@ async function renderTopRateTv() {
                         `;
     });
     topRateTv.innerHTML = stringTopRateTv;
+    slideCarousel()
+}
+function slideCarousel() {
     $(document).ready(function () {
         $('.owl-carousel').owlCarousel({
             loop: true,
@@ -180,20 +198,3 @@ async function renderTopRateTv() {
         })
     })
 }
-
-// async function renderModalTrailer() {
-//     const res = await getMovieTrailer()
-//     const modalTrailer = document.getElementById("modal")
-//     modalTrailer.innerHTML = "
-//         <div div class="modal_container" >
-//             <div class="modal_content">
-//                 <button class="close_modal" id="close_modal_trailer">X</button>
-//                 <iframe class="modal_iframe" id="iframe_trailer" title="YouTube video player" frameborder="0"
-//                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-//                     allowfullscreen></iframe>
-//             </div>
-//         </div>
-//         "
-
-// }
-// renderModalTrailer()
