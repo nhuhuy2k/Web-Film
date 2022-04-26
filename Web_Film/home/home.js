@@ -4,12 +4,17 @@ import { getMovieTrailer, getTrendingMovie, getTopRateMovie, getTrendingTv, getT
 let modalTrailer = document.getElementById('modal');
 let iframeTrailer = document.getElementById("iframe_trailer");
 
-
+// renderHeader()
 renderTrendingMovie()
 renderTopRateMovie()
 renderTrendingTv()
 renderTopRateTv()
 renderSlider()
+// function renderHeader(){
+//     const header = document.getElementById("header__page")
+//     const stringHeader = ``
+
+// }
 
 $(document).ready(function () {
     $(function () {
@@ -24,44 +29,9 @@ async function renderSlider() {
     const res = await getTrendingMovie();
     const slider = document.getElementById("slider");
     let stringSlider = "";
-
-<<<<<<< HEAD
-getSlider();
-getTrendingMovie();
-getTopRateMovie();
-getTrendingTv();
-getTopRateTv();
-
-
-function getSlider() {
-    getData(urlApi, {}).then((data) => {
-        const slider = document.getElementById("slider");
-        let stringSlider = "";
-        // JSON data parsed by `data.json()` call
-        let results = data.results;
-        //get video trailer youtobe
-        //https://api.themoviedb.org/3/{{category}}/{{movie_id}}/videos?api_key={{api_key}}
-        results.slice(0, 4).forEach((item) => {
-            stringSlider += `<div class="slide_item fade" id="slide__item" style="background-image: url(${urlBackground}${item.backdrop_path
-                })">
-                    <div class="slide_container">
-                        <div class="content">
-                            <h2 class="name_film ">${item.original_title || item.title
-                }</h2>
-                            <p class="introduce">${item.overview}</p>
-                            <div class="btns">
-                                <button class="btn btn_watch_now"> Watch now</button>
-                                <button class="btn btn_watch_trailer" id="btn_trailer" value='https://www.youtube.com/embed/761uRaAoW00'> Watch
-                                    trailer</button >
-                            </div >
-                        </div >
-                        <div class="poster">
-                            <img src="${srcPoster}${item.poster_path
-                }" class="poster_img">
-                        </div>
-=======
+    var x = 0;
     res.results.slice(0, 4).forEach((item) => {
-        stringSlider += `<div class="slide_item fade" style="background-image: url(${urlBackground}${item.backdrop_path})">
+        stringSlider += `<div class="slide_item fade" id="${x++}"style="background-image: url(${urlBackground}${item.backdrop_path})">
              <div class="slide_container">
                 <div class="content">
                     <h2 class="name_film fade_in">${item.original_title || item.title}</h2>
@@ -69,86 +39,21 @@ function getSlider() {
                     <div class="btns">
                         <button class="btn btn_watch_now"> Watch now</button>
                          <button class="btn btn_watch_trailer" id="btn_trailer"  value="https://www.youtube.com/youtubei/v1/log_event?alt=json&key=AIzaSyAO_FJ2SlqU8Q4STEHLGCilw_Y9_11qcW8"> Watch trailer</button >
->>>>>>> 1941115 (new update)
                     </div >
                 </div >
-<<<<<<< HEAD
-                
-                `;
-
-        });
-        slider.innerHTML = stringSlider;
-        $(document).ready(function() {
-            $(".btn_watch_trailer").click(function() {
-                modalTrailer.style.display = "block";
-                $("#iframe_trailer").attr("src", this.value)
-            })
-            $("#close_modal_trailler").click(function() {
-                modalTrailer.style.display = "none";
-            })
-        })
-        // const oppenTrailerModal = document.getElementById("btn_trailer");
-        // oppenTrailerModal.addEventListener("click", function () {
-        //     modalTrailer.style.display = "block";
-        // })
-        // const closeTrailerModal = document.getElementById("close_modal_trailler");
-        // closeTrailerModal.addEventListener("click", function () {
-        //     modalTrailer.style.display = "none";
-        // })
-
-        var slideIndex = 0;
-        showSlider();
-
-        const prevSlide = document.getElementById('prev_js');
-        prevSlide.addEventListener('click', plusSlides(-1))
-        const nextSlide = document.getElementById('next_js');
-        nextSlide.addEventListener('click', plusSlides(1))
-
-
-        function showSlider() {
-            var slides = document.getElementsByClassName("slide_item");
-            for (var i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";
-            }
-            slideIndex++;
-            if (slideIndex > slides.length) { slideIndex = 1 }
-            slides[slideIndex - 1].style.display = "block";
-            setTimeout(showSlider, 8000);
-        }
-
-        function plusSlides(n) {
-            showSlides2(slideIndex += n);
-        }
-
-        function showSlides2(n) {
-            var i;
-            var slides = document.getElementsByClassName("slide_item");
-
-            if (n > slides.length) { slideIndex = 1 }
-            if (n < 1) { slideIndex = slides.length }
-
-            for (i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";
-            }
-            slides[slideIndex - 1].style.display = "block";
-        }
-
-=======
                 <div class="poster">
                     <img src="${srcPoster}${item.poster_path}" class="poster_img fade_in">
                 </div>
             </div >
-            <a class="prev " id="prev_js">&#10094;</a>
-            <a class="next " id="next_js">&#10095;</a>
+           
         </div >
          `;
->>>>>>> 1941115 (new update)
     });
     slider.innerHTML = stringSlider;
 
     var slideIndex = 0;
     showSlider();
-   
+
     function showSlider() {
         var slides = document.getElementsByClassName("slide_item");
         for (var i = 0; i < slides.length; i++) {
@@ -157,7 +62,7 @@ function getSlider() {
         slideIndex++;
         if (slideIndex > slides.length) { slideIndex = 1 }
         slides[slideIndex - 1].style.display = "block";
-        setTimeout(showSlider, 5000);
+        // setTimeout(showSlider, 10000);
     }
 
     function plusSlides(n) {
@@ -167,13 +72,19 @@ function getSlider() {
     function showSlides2(n) {
         var i;
         var slides = document.getElementsByClassName("slide_item");
-        for (i = 0; i < slides.length; i++) {
-            slides[i].style.display = "none";
+        
+        if (n > slides.length) {
+            slideIndex = 1
         }
-        if (n > slides.length) { slideIndex = 1 }
-        if(n < slides.length) { slideIndex = slides.length }
+        if (n < slides.length) {
+            slideIndex = slides.length
+        }
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none"
+        }
         slides[slideIndex - 1].style.display = "block";
     }
+
     $(document).ready(function () {
         $(".btn_watch_trailer").click(function () {
             modalTrailer.style.display = "block";
@@ -183,8 +94,13 @@ function getSlider() {
             modalTrailer.style.display = "none"
         })
 
-    })
+        var prevN = -1;
+        var nextN = 1;
+        var slideIndex = 0
+        $('.prev').click(plusSlides(prevN))
+        $('.next').click(plusSlides(nextN))
 
+    });
 
 }
 
@@ -250,6 +166,9 @@ async function renderTopRateTv() {
                         `;
     });
     topRateTv.innerHTML = stringTopRateTv;
+    slideCarousel()
+}
+function slideCarousel() {
     $(document).ready(function () {
         $('.owl-carousel').owlCarousel({
             loop: true,
@@ -279,20 +198,3 @@ async function renderTopRateTv() {
         })
     })
 }
-
-// async function renderModalTrailer() {
-//     const res = await getMovieTrailer()
-//     const modalTrailer = document.getElementById("modal")
-//     modalTrailer.innerHTML = "
-//         <div div class="modal_container" >
-//             <div class="modal_content">
-//                 <button class="close_modal" id="close_modal_trailer">X</button>
-//                 <iframe class="modal_iframe" id="iframe_trailer" title="YouTube video player" frameborder="0"
-//                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-//                     allowfullscreen></iframe>
-//             </div>
-//         </div>
-//         "
-
-// }
-// renderModalTrailer()
