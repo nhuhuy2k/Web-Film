@@ -72,7 +72,7 @@ async function renderSlider() {
     function showSlides2(n) {
         var i;
         var slides = document.getElementsByClassName("slide_item");
-        
+        console.log(1)
         if (n > slides.length) {
             slideIndex = 1
         }
@@ -94,11 +94,8 @@ async function renderSlider() {
             modalTrailer.style.display = "none"
         })
 
-        var prevN = -1;
-        var nextN = 1;
-        var slideIndex = 0
-        $('.prev').click(plusSlides(prevN))
-        $('.next').click(plusSlides(nextN))
+        $('.prev').click(plusSlides(-1))
+        $('.next').click(plusSlides(1))
 
     });
 
