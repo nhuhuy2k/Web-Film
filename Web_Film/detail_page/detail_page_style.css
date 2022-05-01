@@ -12,7 +12,7 @@ body {
 }
 
 
-.container {}
+
 
 #banner{
     height: 50vh;
@@ -51,7 +51,7 @@ body {
     max-width: 1260px;
     margin-left: auto;
     margin-right: auto;
-
+    padding: 0 30px;
 }
 
 .movie_content_poster {
@@ -143,6 +143,9 @@ body {
     margin-left: 40px;
     font-size: 24px;
 }
+.box_similar{
+    padding-left: 30px;
+}
 .list_similar_film a{
     text-decoration: none;
     color: #fff;
@@ -150,7 +153,6 @@ body {
 .list_similar_film {
     display: flex;
     justify-content: flex-start;
-    margin: 0 30px 50px;
 }
 
 .similar_film {

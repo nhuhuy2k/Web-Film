@@ -40,7 +40,7 @@ async function renderSlider() {
                     <h2 class="name_film fade_in">${item.original_title || item.title}</h2>
                     <p class="introduce fade_in">${item.overview}</p>
                     <div class="btns">
-                        <button class="btn btn_watch_now"> Watch now</button>
+                        <a href="../detail_page/detail_page.html"><button class="btn btn_watch_now" > Watch now</button></a>
                          <button class="btn btn_watch_trailer" id="btn_trailer${x}"  value=""> Watch trailer</button >
                     </div >
                 </div >
@@ -92,7 +92,7 @@ async function renderSlider() {
         let results = res.results[0].key
         $("#iframe_trailer").attr("src", `${urlYoutube}${results}`)
     }
-    
+
     $(document).ready(function () {
             
         $("#btn_trailer1").click(function () {
@@ -100,7 +100,6 @@ async function renderSlider() {
             getVideo(0)
         })
         $("#btn_trailer2").click(function () {
-            
             modalTrailer.style.display = "block";
             getVideo(1)
         })
