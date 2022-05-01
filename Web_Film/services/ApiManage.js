@@ -1,6 +1,7 @@
-var apiKey = "d386a82ea55b2f97b7474a45b83c016f";
+const apiKey = "d386a82ea55b2f97b7474a45b83c016f";
 export const urlBackground = "https://image.tmdb.org/t/p/original/";
 export const srcPoster = "https://image.tmdb.org/t/p/w500/";
+export const urlYoutube ="https://www.youtube.com/embed/"
 const theMovieDBUrl = "https://api.themoviedb.org/3"
 const category = {
     movie: "movie",
@@ -11,9 +12,15 @@ const movieType = {
     top_rated: "top_rated",
     upcoming: "upcoming",
     similar: "similar",
-    credits: "credits"
+    credits: "credits",
+    videos: "videos"
 }
-
+const listMovieId = [
+    414906,
+    335787,
+    634649,
+    508947
+]
 export async function getData(url) {
     const response = await fetch(url, {
         method: 'Get',
@@ -46,10 +53,6 @@ export function getTopRateTv() {
   return  getData(urlApiTopRateTv, {})     
 }
 
-export function getMovieTrailer() {
-    const urlMovieTrailer = `${theMovieDBUrl}/${category.movie}/${movieType.upcoming}?api_key=${apiKey}&language=en-US&page=1`
-  return  getData(urlMovieTrailer, {})     
-}
 
 export function getSimilarMovie(){
     const urlApiSimilarMovie =`${theMovieDBUrl}/${category.movie}/313233/${movieType.similar}?api_key=${apiKey}`
@@ -57,8 +60,6 @@ export function getSimilarMovie(){
 }
 
 export function getCategoriesMovie(){
-    // https://api.themoviedb.org/3/movie/414906?api_key=2199f9775718734b07129fef98b449e2
-    // https://api.themoviedb.org/3/movie/212122?api_key=<<api_key>>&language=en-US
     const urlApiCategory =`${theMovieDBUrl}/${category.movie}/414906?api_key=${apiKey}`
     return getData(urlApiCategory, {})
 }
@@ -67,4 +68,8 @@ export function getCasts(){
     // https://api.themoviedb.org/3/movie/414906/credits?api_key=2199f9775718734b07129fef98b449e2
     const urlApiCasts = `${theMovieDBUrl}/${category.movie}/414906/${movieType.credits}?api_key=${apiKey}`
     return getData(urlApiCasts, {})
+}
+export function getMovieTrailer(number) {
+    const urlApiMovieTrailer = `https://api.themoviedb.org/3/movie/${listMovieId[`${number}`]}/videos?api_key=d386a82ea55b2f97b7474a45b83c016f`
+    return getData(urlApiMovieTrailer, {})
 }

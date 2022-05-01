@@ -1,5 +1,5 @@
 // // let header= document.getElementsByClassName('js_header')
-import { getMovieTrailer, getTrendingMovie, getTopRateMovie, getTrendingTv, getTopRateTv, urlBackground, srcPoster } from "../services/ApiManage.js";
+import { getData, getTrendingMovie, getTopRateMovie, getTrendingTv, getTopRateTv, urlBackground, srcPoster, urlYoutube, getMovieTrailer } from "../services/ApiManage.js";
 // Modal 
 let modalTrailer = document.getElementById('modal');
 let iframeTrailer = document.getElementById("iframe_trailer");
@@ -25,20 +25,23 @@ $(document).ready(function () {
     });
 
 });
+
 async function renderSlider() {
     const res = await getTrendingMovie();
     const slider = document.getElementById("slider");
+
     let stringSlider = "";
     var x = 0;
     res.results.slice(0, 4).forEach((item) => {
-        stringSlider += `<div class="slide_item fade" id="${x++}"style="background-image: url(${urlBackground}${item.backdrop_path})">
+        x++
+        stringSlider += `<div class="slide_item fade" id="${x}"style="background-image: url(${urlBackground}${item.backdrop_path})">
              <div class="slide_container">
                 <div class="content">
                     <h2 class="name_film fade_in">${item.original_title || item.title}</h2>
                     <p class="introduce fade_in">${item.overview}</p>
                     <div class="btns">
                         <button class="btn btn_watch_now"> Watch now</button>
-                         <button class="btn btn_watch_trailer" id="btn_trailer"  value="https://www.youtube.com/youtubei/v1/log_event?alt=json&key=AIzaSyAO_FJ2SlqU8Q4STEHLGCilw_Y9_11qcW8"> Watch trailer</button >
+                         <button class="btn btn_watch_trailer" id="btn_trailer${x}"  value=""> Watch trailer</button >
                     </div >
                 </div >
                 <div class="poster">
@@ -63,21 +66,20 @@ async function renderSlider() {
         slideIndex++;
         if (slideIndex > slides.length) { slideIndex = 1 }
         slides[slideIndex - 1].style.display = "block";
-        // setTimeout(showSlider, 10000);
+        setTimeout(showSlider, 10000);
     }
 
     function plusSlides(n) {
-        console.log(1)
         showSlides2(slideIndex += n);
     }
 
     function showSlides2(n) {
         var i;
-        var slides = document.getElementsByClassName("slide_item");
+        const slides = document.getElementsByClassName("slide_item");
         if (n > slides.length) {
             slideIndex = 1
         }
-        if (n < slides.length) {
+        if (n < 1) {
             slideIndex = slides.length
         }
         for (i = 0; i < slides.length; i++) {
@@ -87,20 +89,53 @@ async function renderSlider() {
     }
 
     $(document).ready(function () {
-        $(".btn_watch_trailer").click(function () {
+            
+        $("#btn_trailer1").click(function () {
+            async function getVideo() {
+                const res = await getMovieTrailer(0)
+                let results = res.results[0].key
+                $("#iframe_trailer").attr("src", `${urlYoutube}${results}`)
+            }
             modalTrailer.style.display = "block";
-            $("#iframe_trailer").attr("src", this.value)
+            getVideo()
+        })
+        $("#btn_trailer2").click(function () {
+            async function getVideo() {
+                const res = await getMovieTrailer(1)
+                let results = res.results[0].key
+                $("#iframe_trailer").attr("src", `${urlYoutube}${results}`)
+            }
+            modalTrailer.style.display = "block";
+            getVideo()
+        })
+        $("#btn_trailer3").click(function () {
+            async function getVideo() {
+                const res = await getMovieTrailer(2)
+                let results = res.results[0].key
+                $("#iframe_trailer").attr("src", `${urlYoutube}${results}`)
+            }
+            modalTrailer.style.display = "block";
+            getVideo()
+        })
+        $("#btn_trailer4").click(function () {
+            async function getVideo() {
+                const res = await getMovieTrailer(3)
+                let results = res.results[0].key
+                $("#iframe_trailer").attr("src", `${urlYoutube}${results}`)
+            }
+            modalTrailer.style.display = "block";
+            getVideo()
         })
         $("#close_modal_trailer").click(function () {
             modalTrailer.style.display = "none"
+            $("#iframe_trailer").attr("src", "")
         })
 
-        // $('.prev').click(plusSlides(-1))
-        // $('.next').click(plusSlides(1))
-        $('.prev').click(function() {
+        $('.prev').click(function () {
             plusSlides(-1)
         })
-        $('.next').click(function() {
+        
+        $('.next').click(function () {
             plusSlides(1)
         })
     });
