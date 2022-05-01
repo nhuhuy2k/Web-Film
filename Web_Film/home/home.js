@@ -45,7 +45,8 @@ async function renderSlider() {
                     <img src="${srcPoster}${item.poster_path}" class="poster_img fade_in">
                 </div>
             </div >
-           
+        <a class="prev" >&#10094;</a>
+	    <a class="next" >&#10095;</a>
         </div >
          `;
     });
