@@ -2,6 +2,7 @@ const apiKey = "d386a82ea55b2f97b7474a45b83c016f";
 export const urlBackground = "https://image.tmdb.org/t/p/original/";
 export const srcPoster = "https://image.tmdb.org/t/p/w500/";
 export const urlYoutube ="https://www.youtube.com/embed/"
+const urlMovie ="https://www.2embed.ru/embed/tmdb/movie?id"
 const theMovieDBUrl = "https://api.themoviedb.org/3"
 const category = {
     movie: "movie",
@@ -15,12 +16,7 @@ const movieType = {
     credits: "credits",
     videos: "videos"
 }
-const listMovieId = [
-    414906,
-    335787,
-    634649,
-    508947
-]
+
 export async function getData(url) {
     const response = await fetch(url, {
         method: 'Get',
@@ -69,7 +65,13 @@ export function getCasts(){
     const urlApiCasts = `${theMovieDBUrl}/${category.movie}/414906/${movieType.credits}?api_key=${apiKey}`
     return getData(urlApiCasts, {})
 }
-export function getMovieTrailer(number) {
-    const urlApiMovieTrailer = `https://api.themoviedb.org/3/movie/${listMovieId[`${number}`]}/videos?api_key=d386a82ea55b2f97b7474a45b83c016f`
+export function getMovieTrailer(id) {
+    const urlApiMovieTrailer = `https://api.themoviedb.org/3/movie/${id}/videos?api_key=d386a82ea55b2f97b7474a45b83c016f`
     return getData(urlApiMovieTrailer, {})
+}
+
+export function getMovies(id) {
+    // https://www.2embed.ru/embed/tmdb/movie?id=414906
+    const urlApiMovie = `${urlMovie}=${id}`
+    return urlApiMovie
 }

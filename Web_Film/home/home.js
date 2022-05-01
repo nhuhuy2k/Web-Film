@@ -1,20 +1,16 @@
 // // let header= document.getElementsByClassName('js_header')
-import { getData, getTrendingMovie, getTopRateMovie, getTrendingTv, getTopRateTv, urlBackground, srcPoster, urlYoutube, getMovieTrailer } from "../services/ApiManage.js";
+import { getMovies, getTrendingMovie, getTopRateMovie, getTrendingTv, getTopRateTv, urlBackground, srcPoster, urlYoutube, getMovieTrailer } from "../services/ApiManage.js";
 // Modal 
 let modalTrailer = document.getElementById('modal');
 let iframeTrailer = document.getElementById("iframe_trailer");
 
-// renderHeader()
+
 renderTrendingMovie()
 renderTopRateMovie()
 renderTrendingTv()
 renderTopRateTv()
 renderSlider()
-// function renderHeader(){
-//     const header = document.getElementById("header__page")
-//     const stringHeader = ``
 
-// }
 
 $(document).ready(function () {
     $(function () {
@@ -29,19 +25,19 @@ $(document).ready(function () {
 async function renderSlider() {
     const res = await getTrendingMovie();
     const slider = document.getElementById("slider");
-
+    let results = res.results
     let stringSlider = "";
     var x = 0;
-    res.results.slice(0, 4).forEach((item) => {
-        x++
-        stringSlider += `<div class="slide_item fade" id="${x}"style="background-image: url(${urlBackground}${item.backdrop_path})">
+    results.slice(0, 4).forEach((item) => {
+       
+        stringSlider += `<div class="slide_item fade" style="background-image: url(${urlBackground}${item.backdrop_path})">
              <div class="slide_container">
                 <div class="content">
                     <h2 class="name_film fade_in">${item.original_title || item.title}</h2>
                     <p class="introduce fade_in">${item.overview}</p>
                     <div class="btns">
-                        <a href="../detail_page/detail_page.html"><button class="btn btn_watch_now" > Watch now</button></a>
-                         <button class="btn btn_watch_trailer" id="btn_trailer${x}"  value=""> Watch trailer</button >
+                        <a href="../detail_page/detail_page.html"><button class="btn btn_watch_now" value="${item.id}"> Watch now</button></a>
+                         <button class="btn btn_watch_trailer" value="${item.id}"> Watch trailer</button >
                     </div >
                 </div >
                 <div class="poster">
@@ -87,31 +83,21 @@ async function renderSlider() {
         }
         slides[slideIndex - 1].style.display = "block";
     }
-    async function getVideo(n) {
-        const res = await getMovieTrailer(n)
-        let results = res.results[0].key
-        $("#iframe_trailer").attr("src", `${urlYoutube}${results}`)
-    }
+    
 
     $(document).ready(function () {
-            
-        $("#btn_trailer1").click(function () {
-            modalTrailer.style.display = "block";
-            getVideo(0)
+        $(".btn_watch_now").click(function () {
+            getMovies(this.value)
         })
-        $("#btn_trailer2").click(function () {
+        $(".btn_watch_trailer").click(function () {
+            renderMovieTrailer(this.value)
+            async function renderMovieTrailer(value) {
+                const res = await getMovieTrailer(value)
+                let results = res.results[0].key
+                console.log(results)
+                $("#iframe_trailer").attr("src", `${urlYoutube}${results}`)
+            }
             modalTrailer.style.display = "block";
-            getVideo(1)
-        })
-        $("#btn_trailer3").click(function () {
-            
-            modalTrailer.style.display = "block";
-            getVideo(2)
-        })
-        $("#btn_trailer4").click(function () {
-            
-            modalTrailer.style.display = "block";
-            getVideo(3)
         })
         $("#close_modal_trailer").click(function () {
             modalTrailer.style.display = "none"

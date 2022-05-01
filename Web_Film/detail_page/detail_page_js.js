@@ -1,4 +1,4 @@
-import { getSimilarMovie, srcPoster, getTrendingMovie, urlBackground, getCategoriesMovie, getCasts} from "../services/ApiManage.js"
+import { getSimilarMovie, srcPoster, getTrendingMovie, urlBackground, getCategoriesMovie, getCasts, getMovies} from "../services/ApiManage.js"
 
 
 $(document).ready(function () {
@@ -65,7 +65,6 @@ async function renderCategoriesMovie() {
 async function renderCasts() {
     const res = await getCasts();
     const casts = document.getElementById("casts_list");
-    console.log(res.cast)
     let result = res.cast
     let stringHTML =""
     result.slice(0, 5).forEach((item) =>{
@@ -77,6 +76,13 @@ async function renderCasts() {
     
     casts.innerHTML = stringHTML;
 }
+renderIframeMovie()
+function renderIframeMovie(){
+    const res =  getMovies(0)
+    const iframeMovie = document.getElementById("iframe_movie")
+    iframeMovie.setAttribute("src", `${res}`)
+}
+
 async function renderSimilar() {
     const res = await getSimilarMovie();
     const listSimilarMovie = document.getElementById("list_similar")
