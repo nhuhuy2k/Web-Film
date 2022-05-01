@@ -87,44 +87,32 @@ async function renderSlider() {
         }
         slides[slideIndex - 1].style.display = "block";
     }
-
+    async function getVideo(n) {
+        const res = await getMovieTrailer(n)
+        let results = res.results[0].key
+        $("#iframe_trailer").attr("src", `${urlYoutube}${results}`)
+    }
+    
     $(document).ready(function () {
             
         $("#btn_trailer1").click(function () {
-            async function getVideo() {
-                const res = await getMovieTrailer(0)
-                let results = res.results[0].key
-                $("#iframe_trailer").attr("src", `${urlYoutube}${results}`)
-            }
             modalTrailer.style.display = "block";
-            getVideo()
+            getVideo(0)
         })
         $("#btn_trailer2").click(function () {
-            async function getVideo() {
-                const res = await getMovieTrailer(1)
-                let results = res.results[0].key
-                $("#iframe_trailer").attr("src", `${urlYoutube}${results}`)
-            }
+            
             modalTrailer.style.display = "block";
-            getVideo()
+            getVideo(1)
         })
         $("#btn_trailer3").click(function () {
-            async function getVideo() {
-                const res = await getMovieTrailer(2)
-                let results = res.results[0].key
-                $("#iframe_trailer").attr("src", `${urlYoutube}${results}`)
-            }
+            
             modalTrailer.style.display = "block";
-            getVideo()
+            getVideo(2)
         })
         $("#btn_trailer4").click(function () {
-            async function getVideo() {
-                const res = await getMovieTrailer(3)
-                let results = res.results[0].key
-                $("#iframe_trailer").attr("src", `${urlYoutube}${results}`)
-            }
+            
             modalTrailer.style.display = "block";
-            getVideo()
+            getVideo(3)
         })
         $("#close_modal_trailer").click(function () {
             modalTrailer.style.display = "none"
