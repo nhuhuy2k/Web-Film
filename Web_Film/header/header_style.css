@@ -32,23 +32,24 @@
     transition: 0.5s;
 }
 
-.logo {
+.logo{
     display: flex;
     align-items: center;
     justify-content: center;
     float: left;
 }
 
-.logo:hover {
+#header .logo:hover {
     color: #E50913;
 }
 
 .logo_text {
     font-size: 30px;
     display: block;
-    padding-left: 8px;
+    margin-left: 8px;
     font-style: italic;
     font-weight: 700;
+    border-bottom: 3px solid #E50913;
 }
 
 .logo_img {
@@ -68,10 +69,6 @@
     margin-right: 20px;
 }
 
-.nav_item a:hover {
-    color: #E50913;
-}
-
 .nav_item:after {
     content: "";
     position: absolute;
@@ -84,7 +81,7 @@
     transition: width ease 0.5s ;
 }
 
-.nav_menu li:active:after, .nav_menu li:hover:after {
+.nav_menu li.active:after, .nav_menu li:hover:after {
     width: 100%;
 }
 
