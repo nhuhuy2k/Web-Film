@@ -85,3 +85,9 @@ export function getSearchMovie(keyWord) {
     const urlApiSearchMovie = `${theMovieDBUrl}/search/movie?api_key=${apiKey}&query=${keyWord}`
     return getData(urlApiSearchMovie, {})
 }
+
+//https://api.themoviedb.org/3/movie/upcoming?api_key=2199f9775718734b07129fef98b449e2
+export function getViewMore(category) {
+    const urlApiUpcoming = `${theMovieDBUrl}/${category}/${movieType.upcoming}?api_key=${apiKey}`;
+  return getData(urlApiUpcoming, {}) 
+}

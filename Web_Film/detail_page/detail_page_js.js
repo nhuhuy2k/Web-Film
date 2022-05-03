@@ -6,6 +6,7 @@ let category = searchParams.get('category')
 let s = searchParams.get('s')
 let e = searchParams.get('e')
 console.log(s, e, movieId, category)
+
 renderBanner(movieId, category);
 renderInfoMovie(movieId, category);
 renderCategoriesMovie(movieId, category);
@@ -105,7 +106,7 @@ async function renderSimilar(movieId, category) {
     let stringHTML = ""
     results.slice(0, 10).forEach((item) => {
         stringHTML += `<div class="similar_film">
-        <a href="../detail_page/detail_page.html?&category=movie&movie_id=${item.id}&s=1&e=1"> <img class="similar_img" src="${srcPoster}${item.poster_path}" alt="">
+        <a href="../detail_page/detail_page.html?&category=${category}&movie_id=${item.id}&s=1&e=1"> <img class="similar_img" src="${srcPoster}${item.poster_path}" alt="">
         <h3 class="similar_name">${item.original_title || item.title || item.original_name || item.name}</h3></a>
     </div>  `
     });

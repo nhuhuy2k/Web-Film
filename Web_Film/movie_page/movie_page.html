@@ -22,10 +22,11 @@
             <h2>Movies</h2>
         </div>
         <div id="movie__container">
-            <form action="" class="movie__search" name="search">
-                <input type="text" name="data" class="input__search" placeholder="Enter keyword" value="">
-                <button class="btn__search" value="">Search</button>
-            </form>
+            <div class="movie__search"  id="form_search" name="search">
+                <input type="text" name="data" id="input_value" class="input__search" placeholder="Enter keyword"
+                    value="">
+                <button type="button" id="btn__search" class="btn__search" value="">Search</button>
+            </div>
 
             <div class="movie__list" id="movie__list">
             </div>
@@ -34,6 +35,12 @@
         </div>
         <script type="module" src="./movie_page_js.js"></script>
         <script src="../header/header.js"></script>
+        <script>
+            if ( window.history.replaceState ) {
+                window.history.replaceState( null, null, window.location.href );
+            }
+        </script>
+        
 </body>
 
 </html>

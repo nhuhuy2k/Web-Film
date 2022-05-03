@@ -1,15 +1,15 @@
-import { getTrendingMovie, srcPoster, getSearchMovie } from "../services/ApiManage.js"
+import { getViewMore, srcPoster, getSearchMovie } from "../services/ApiManage.js"
+
+let queryString = window.location.search;
+let searchParams = new URLSearchParams(queryString)
+let category = searchParams.get("category")
+
+renderMovies(category);
 
 
-    renderMovies();
-
-
-
-var data = document.forms["search"]["data"].value   
-
-async function render(data){
-    const res = await getSearchMovie(data);
-    console.log(res)
+async function renderSearchResults() {
+    const keyword = document.getElementById("input_value").value
+    const res = await getSearchMovie(keyword);
     const movieList = document.getElementById("movie__list")
     let stringHTML = "";
     res.results.forEach((item) => {
@@ -22,17 +22,20 @@ async function render(data){
     });
     movieList.innerHTML = stringHTML;
 }
-
-$(document).ready(function () {
-    $(".btn__search").click(function () {
-        render()
-       
-    })
+$(".btn__search").click(function () {
+    renderSearchResults()
 })
 
 
-async function renderMovies() {
-    const res = await getTrendingMovie();
+$("#input_value").keypress(function(event){
+    if(event.key === "Enter"){
+        event.preventDefault();
+        $("#btn__search").click()
+    }
+})
+
+async function renderMovies(category) {
+    const res = await getViewMore(category);
     const movieList = document.getElementById("movie__list")
     let stringHTML = "";
     res.results.forEach((item) => {

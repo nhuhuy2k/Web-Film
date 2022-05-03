@@ -10,12 +10,6 @@
     <link rel="stylesheet" href="../header/header_style.css">
     <link rel="stylesheet" href="../footer/footer_style.css">
     <link rel="stylesheet" href="tv_page_style.css">
-    <script>
-        $(function () {
-            $("#header__page").load("../header/header.html");
-        });
-    </script>
-
     </div>
 
 </head>
@@ -28,10 +22,10 @@
             <h2>TV Series</h2>
         </div>
         <div id="movie__container">
-            <div class="movie__search">
-                <input type="text" class="input__search" placeholder="Enter keyword" value="">
-                <button class="btn__search">Search</button>
-
+            <div class="movie__search"  id="form_search" name="search">
+                <input type="text" name="data" id="input_value" class="input__search" placeholder="Enter keyword"
+                    value="">
+                <button type="button" id="btn__search" class="btn__search" value="">Search</button>
             </div>
             <div class="movie__list" id="movie__list">
                 
