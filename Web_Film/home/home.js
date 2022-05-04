@@ -177,9 +177,6 @@ async function renderTopRateTv() {
                         `;
     });
     topRateTv.innerHTML = stringTopRateTv;
-    slideCarousel()
-}
-function slideCarousel() {
     $(document).ready(function () {
         $('.owl-carousel').owlCarousel({
             loop: true,
@@ -187,25 +184,23 @@ function slideCarousel() {
             nav: false,
             responsive: {
                 0: {
-                    items: 1
-                },
-                472: {
                     items: 2
                 },
-                685: {
+                472: {
                     items: 3
                 },
-                900: {
+                685: {
                     items: 4
                 },
-                1100: {
+                900: {
                     items: 5
                 },
-                1200: {
+                1100: {
                     items: 6
-                }
-
+                },
             }
         })
     })
 }
+    
+

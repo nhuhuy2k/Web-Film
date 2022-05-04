@@ -91,3 +91,12 @@ export function getViewMore(category) {
     const urlApiUpcoming = `${theMovieDBUrl}/${category}/${movieType.upcoming}?api_key=${apiKey}`;
   return getData(urlApiUpcoming, {}) 
 }
+
+export function getLoadMoreMOvie(numberPage) {
+    const urlApiUpcoming = `${theMovieDBUrl}/movie/${movieType.upcoming}?api_key=2199f9775718734b07129fef98b449e2&page=${numberPage}`;
+  return getData(urlApiUpcoming, {}) 
+}
+export function getLoadMoreTv(numberPage) {
+    const urlApiMoreTv = `${theMovieDBUrl}/${category.tv}/${movieType.popular}?api_key=${apiKey}&page=${numberPage}`;
+  return getData(urlApiMoreTv, {}) 
+}

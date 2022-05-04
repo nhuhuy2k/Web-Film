@@ -100,6 +100,24 @@ body{
     font-size: 20px;
     margin-top: 10px;
 }
+
+.btn_load_more{
+    position: relative;
+    padding: 8px 16px;
+    border: 2px solid #fff;
+    background-color: #0f0f0f;
+    color: #fff;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: 600;
+    left: 50%;
+    transform: translateX(-50%);
+    cursor: pointer;
+}
+.btn_load_more:hover{
+    background-color: #fff;
+    color: #000;
+}
 /* Reponsive Tablet */
 @media only screen and (min-width: 37.5625em) and (max-width: 64em){
 
@@ -137,5 +155,9 @@ body{
         position: absolute;
         right: 0;
         transform: translateX(0);
+    }
+    .btn_load_more{
+        padding: 4px 8px;
+        font-size: 12px;  
     }
 }
