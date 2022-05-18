@@ -10,7 +10,7 @@ renderTopRateMovie()
 renderTrendingTv()
 renderTopRateTv()
 renderSlider()
-
+reanderFooter()
 
 
 
@@ -30,15 +30,37 @@ function reanderHeader() {
 </div>`;
     header.innerHTML = stringHtml
 }
-$(document).ready(function () {
-    // $(function () {
-    //     $("#header__page").innerHTML = header;
-    // });
-    $(function () {
-        $("#footer__page").load("footer/footer.html");
-    });
-
-});
+function reanderFooter() {
+    const footer = document.getElementById('footer__page')
+    const stringHtml = `<div id="footer">
+    <div class="footer_container">
+        <div class="footer_heading">
+            <img src="asset/img/logo.1e58b23f.png" alt="">
+            <h2>MOVIE</h2>
+        </div>
+        <div class="footer_content">
+            <ul>
+                <li><a href="">Home</a></li>
+                <li><a href="">Contact us</a></li>
+                <li><a href="">Tern of services</a></li>
+                <li><a href="">About us</a></li>
+            </ul>
+            <ul>
+                <li><a href="">Live</a></li>
+                <li><a href="">FAQ</a></li>
+                <li><a href="">Preminum</a></li>
+                <li><a href="">Pravacy policy</a></li>
+            </ul>
+            <ul>
+                <li><a href="">You must watch</a></li>
+                <li><a href="">Recent release</a></li>
+                <li><a href="">Top IMDB</a></li>
+            </ul>
+        </div>
+    </div>
+</div>`;
+    footer.innerHTML = stringHtml
+}
 async function renderSlider() {
     const res = await getTrendingMovie();
     const slider = document.getElementById("slider");
