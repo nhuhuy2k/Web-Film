@@ -36,7 +36,7 @@ async function renderSlider() {
                     <h2 class="name_film fade_in">${item.original_title || item.title}</h2>
                     <p class="introduce fade_in">${item.overview}</p>
                     <div class="btns">
-                        <a href="../detail_page/detail_page.html?category=movie&movie_id=${item.id}"><button class="btn btn_watch_now" value="${item.id}"> Watch now</button></a>
+                        <a href="./detail_page/detail_page.html?category=movie&movie_id=${item.id}"><button class="btn btn_watch_now" value="${item.id}"> Watch now</button></a>
                          <button class="btn btn_watch_trailer" value="${item.id}"> Watch trailer</button >
                     </div >
                 </div >
@@ -122,7 +122,7 @@ async function renderTrendingMovie() {
     res.results.slice(0, 10).forEach((item) => {
         stringTrendMovie += `
                         <div class="movie">
-                            <a href="../detail_page/detail_page.html?category=movie&movie_id=${item.id}"><img src="${srcPoster}${item.poster_path
+                            <a href="./detail_page/detail_page.html?category=movie&movie_id=${item.id}"><img src="${srcPoster}${item.poster_path
             }" alt=""></a>
                             <h3>${item.original_title || item.title}</h3>
                         </div>
@@ -139,7 +139,7 @@ async function renderTopRateMovie() {
     res.results.slice(0, 10).forEach((item) => {
         stringTopRateMovies += `
                         <div class="movie">
-                            <a href="../detail_page/detail_page.html?category=movie&movie_id=${item.id}"><img src="${srcPoster}${item.poster_path
+                            <a href="./detail_page/detail_page.html?category=movie&movie_id=${item.id}"><img src="${srcPoster}${item.poster_path
             }" alt=""></a>
                             <h3>${item.original_title || item.title}</h3>
                         </div>
@@ -156,7 +156,7 @@ async function renderTrendingTv() {
     results.slice(0, 10).forEach((item) => {
         stringTrendingTv += `
                         <div class="movie">
-                            <a href="../detail_page/detail_page.html?category=tv&movie_id=${item.id}&s=1&e=1"><img src="${srcPoster}${item.poster_path
+                            <a href="./detail_page/detail_page.html?category=tv&movie_id=${item.id}&s=1&e=1"><img src="${srcPoster}${item.poster_path
             }" alt=""></a>
                             <h3>${item.original_name || item.name}</h3>
                         </div>
@@ -171,7 +171,7 @@ async function renderTopRateTv() {
     res.results.slice(0, 10).forEach((item) => {
         stringTopRateTv += `
                         <div class="movie">
-                            <a href="../detail_page/detail_page.html?category=tv&movie_id=${item.id}&s=1&e=1"><img src="${srcPoster}${item.poster_path
+                            <a href="./detail_page/detail_page.html?category=tv&movie_id=${item.id}&s=1&e=1"><img src="${srcPoster}${item.poster_path
             }" alt=""></a>
                             <h3>${item.original_name || item.name}</h3>
                         </div>
