@@ -4,7 +4,7 @@ import { getMovies, getTrendingMovie, getTopRateMovie, getTrendingTv, getTopRate
 let modalTrailer = document.getElementById('modal');
 let iframeTrailer = document.getElementById("iframe_trailer");
 
-
+reanderHeader()
 renderTrendingMovie()
 renderTopRateMovie()
 renderTrendingTv()
@@ -13,26 +13,32 @@ renderSlider()
 
 
 
+
+
+function reanderHeader() {
+    const header = document.getElementById('header__page')
+    const stringHtml = `<div id="header">
+<a href="../index.html" class="logo"><img class="logo_img" src="asset/img/logo.1e58b23f.png" alt="">
+    <p class="logo_text">MOVIE</p>
+</a>
+<ul class="nav_menu">
+    <li class="nav_item "><a href="../index.html">Home</a></li>
+    <li class="nav_item "><a href="../movie_page/movie_page.html?category=movie">Movies</a></li>
+    <li class="nav_item"><a href="../tv_page/tv_page.html?category=tv">TV series</a></li>
+    <li class="nav_item"><a href="#">Login</a></li>
+</ul>
+</div>`;
+    header.innerHTML = stringHtml
+}
 $(document).ready(function () {
-    $(function () {
-        $("#header__page").load(`<div id="header">
-        <a href="../index.html" class="logo"><img class="logo_img" src="asset/img/logo.1e58b23f.png" alt="">
-            <p class="logo_text">MOVIE</p>
-        </a>
-        <ul class="nav_menu">
-            <li class="nav_item "><a href="../index.html">Home</a></li>
-            <li class="nav_item "><a href="../movie_page/movie_page.html?category=movie">Movies</a></li>
-            <li class="nav_item"><a href="../tv_page/tv_page.html?category=tv">TV series</a></li>
-            <li class="nav_item"><a href="#">Login</a></li>
-        </ul>
-    </div>`);
-    });
+    // $(function () {
+    //     $("#header__page").innerHTML = header;
+    // });
     $(function () {
         $("#footer__page").load("footer/footer.html");
     });
 
 });
-
 async function renderSlider() {
     const res = await getTrendingMovie();
     const slider = document.getElementById("slider");
@@ -93,7 +99,7 @@ async function renderSlider() {
         }
         slides[slideIndex - 1].style.display = "block";
     }
-    
+
 
     $(document).ready(function () {
         $(".btn_watch_now").click(function () {
@@ -117,7 +123,7 @@ async function renderSlider() {
         $('.prev').click(function () {
             plusSlides(-1)
         })
-        
+
         $('.next').click(function () {
             plusSlides(1)
         })
@@ -213,5 +219,5 @@ async function renderTopRateTv() {
         })
     })
 }
-    
+
 
